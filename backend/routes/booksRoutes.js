@@ -53,7 +53,7 @@ router.get("/:id", async (request, response) => {
 
         const book = await Book.findById(id);
 
-        return response.status(200).json({book});
+        return response.status(200).json(book);
     }catch (error ) {
         console.log(error.message);
         response.status(500).send({ message: error.message})
